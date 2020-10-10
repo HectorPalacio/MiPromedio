@@ -9,7 +9,7 @@ class DetallesMateria extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detalles de materia'),
+        title: Text('Inteligencia Artificial'),
       ),
       body: _construirBody(context),
     );
@@ -22,27 +22,11 @@ class DetallesMateria extends StatelessWidget {
         children: [
           Column(
             children: <Widget>[
-              _crearInputNombre(context),
+              //_crearInputNombre(context),
               _crearBotonesGordos(context),
             ],
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _crearInputNombre(BuildContext context) {
-    // if (this.nombre != null) {
-    //   controllerNombreText.text = this.nombre;
-    // }
-    return TextField(
-      // controller: controllerNombreText,
-      //autofocus: true,
-      textCapitalization: TextCapitalization.sentences,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
-        hintText: 'Nombre de materia',
-        // labelText: 'Nombre de materia',
       ),
     );
   }

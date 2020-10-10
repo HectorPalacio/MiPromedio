@@ -58,6 +58,8 @@ class ListaMaterias extends StatelessWidget {
           Container(
             width: _sizeWidth,
             height: _sizeHeight * 0.3,
+            // height: _sizeHeight * 0.5,
+            // color: Colors.red,
             child: Column(
               children: [
                 Text(

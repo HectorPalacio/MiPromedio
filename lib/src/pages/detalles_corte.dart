@@ -27,16 +27,17 @@ class _DetalleCorteState extends State<DetalleCorte> {
       padding: EdgeInsets.all(10),
       child: Stack(
         children: [
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: ListView(
-              children: [
-                Column(
+          ListView(
+            children: [
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Column(
                   children: [
+                    //Container(margin: EdgeInsets.only(top: _sizeHeight * 0.63)),
                     Container(
-                        margin: EdgeInsets.only(top: _diagonalSize * 0.47)),
-                    Divider(),
-                    Container(
+                      // margin: EdgeInsets.only(top: _sizeHeight * 0.54),
+                      margin: EdgeInsets.only(top: _sizeHeight * 0.6),
+                      // color: Colors.red,
                       width: _sizeWidth,
                       height: _sizeHeight * 0.3,
                       child: Column(
@@ -58,75 +59,55 @@ class _DetalleCorteState extends State<DetalleCorte> {
                     ),
                   ],
                 ),
-              ],
-            ),
-          ),
-          ListView(
-            physics: BouncingScrollPhysics(),
-            children: [
-              Container(
-                height: _diagonalSize * 0.5,
-                child: ListView.builder(
-                  physics: BouncingScrollPhysics(),
-                  itemCount: 20,
-                  itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        TextField(
-                          // controller: controllerNombreText,
-                          //autofocus: true,
-                          textCapitalization: TextCapitalization.sentences,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20.0)),
-                            hintText: 'Nombre de materia',
-                            // labelText: 'Nombre de materia',
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: TextField(
-                                // controller: controllerNombreText,
-                                //autofocus: true,
-                                textCapitalization:
-                                    TextCapitalization.sentences,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(20.0)),
-                                  hintText: 'Nombre de la actividad',
-                                  // labelText: 'Nombre de materia',
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 5),
-                            SizedBox(
-                              width: 50,
-                              child: TextField(
-                                // controller: controllerNombreText,
-                                //autofocus: true,
-                                textCapitalization:
-                                    TextCapitalization.sentences,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(20.0)),
-                                  hintText: '%',
-                                  // labelText: 'Nombre de materia',
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Divider(),
-                      ],
-                    );
-                  },
-                ),
               ),
             ],
+          ),
+          Container(
+            // color: Colors.blue,
+            height: _sizeHeight * 0.55,
+            child: ListView.builder(
+              physics: BouncingScrollPhysics(),
+              itemCount: 0,
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            // controller: controllerNombreText,
+                            //autofocus: true,
+                            textCapitalization: TextCapitalization.sentences,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20.0)),
+                              hintText: 'Nombre de la actividad',
+                              // labelText: 'Nombre de materia',
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 5),
+                        SizedBox(
+                          width: 50,
+                          child: TextField(
+                            // controller: controllerNombreText,
+                            //autofocus: true,
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20.0)),
+                              hintText: '%',
+                              // labelText: 'Nombre de materia',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Divider(),
+                  ],
+                );
+              },
+            ),
           ),
         ],
       ),
