@@ -5,11 +5,15 @@ import 'package:mi_promedio/src/pages/detalles_corte.dart';
 import 'package:mi_promedio/src/widgets/boton_gordo.dart';
 
 class DetallesMateria extends StatelessWidget {
+  final String nombreAsignatura;
+  final double primerCorte;
+
+  const DetallesMateria({this.nombreAsignatura, this.primerCorte});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inteligencia Artificial'),
+        title: Text('${this.nombreAsignatura}'),
       ),
       body: _construirBody(context),
     );
@@ -22,7 +26,6 @@ class DetallesMateria extends StatelessWidget {
         children: [
           Column(
             children: <Widget>[
-              //_crearInputNombre(context),
               _crearBotonesGordos(context),
             ],
           ),

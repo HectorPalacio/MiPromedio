@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:mi_promedio/src/models/actividad_model.dart';
 
 class DetalleCorte extends StatefulWidget {
   @override
@@ -13,6 +14,13 @@ class _DetalleCorteState extends State<DetalleCorte> {
     return Scaffold(
       appBar: AppBar(
         title: Text('# Corte'),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.add),
+              onPressed: () {
+                _agregarActividad(context);
+              })
+        ],
       ),
       body: _construirBody(),
     );
@@ -51,7 +59,7 @@ class _DetalleCorteState extends State<DetalleCorte> {
                             ),
                           ),
                           Text(
-                            '¿Eres Pajayó?',
+                            'Que pro',
                             style: TextStyle(fontSize: _diagonalSize * 0.04),
                           )
                         ],
@@ -111,6 +119,63 @@ class _DetalleCorteState extends State<DetalleCorte> {
           ),
         ],
       ),
+    );
+  }
+
+  void _agregarActividad(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) {
+        return AlertDialog(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          title: Text('Agregar actividad'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              TextField(
+                // controller: controllerNombreText,
+                //autofocus: true,
+                textCapitalization: TextCapitalization.sentences,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0)),
+                  hintText: 'Nombre de la actividad',
+                  // labelText: 'Nombre de materia',
+                ),
+              ),
+              TextField(
+                // controller: controllerNombreText,
+                //autofocus: true,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0)),
+                  hintText: '%',
+                  // labelText: 'Nombre de materia',
+                ),
+              ),
+            ],
+          ),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('Cancelar'),
+              onPressed: () => Navigator.of(context).pop(),
+            ),
+            FlatButton(
+              child: Text('Ok'),
+              onPressed: () {
+                final nuevaActividad = ActividadModel(
+                  nombreActividad: 'Taller microbiana',
+                );
+                //ActividadController.nuevaActividad(nuevaMateria);
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }

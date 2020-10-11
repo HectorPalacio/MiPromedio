@@ -11,7 +11,6 @@ class BotonGordo extends StatelessWidget {
   final Color color2;
   @required
   final Function onPress;
-  final String notaCorte;
 
   const BotonGordo({
     this.icon = FontAwesomeIcons.circle,
@@ -19,7 +18,6 @@ class BotonGordo extends StatelessWidget {
     this.color1 = Colors.grey,
     this.color2 = Colors.blueGrey,
     this.onPress,
-    this.notaCorte = '5.00',
   });
   @override
   Widget build(BuildContext context) {
@@ -55,16 +53,6 @@ class BotonGordo extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              ),
-              Text(
-                '${this.notaCorte}',
-                style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                width: 10.0,
               ),
               FaIcon(
                 FontAwesomeIcons.chevronRight,

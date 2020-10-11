@@ -62,14 +62,14 @@ class DBProvider {
 
   // borrarTabla() async {
   //   final db = await database;
-  //   final res = await db.execute('DROP TABLE Clientes');
+  //   final res = await db.execute('DROP TABLE Actividad');
   //   return res;
   // }
 
   //MATERIAS--------------------------------------------------------
 
   //Registrar materia
-  nuevoCliente(MateriasModel nuevaMateria) async {
+  nuevaMateria(MateriasModel nuevaMateria) async {
     final db = await database;
     final res = await db.insert('Materias', nuevaMateria.toJson());
     return res;
