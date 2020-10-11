@@ -1,4 +1,4 @@
-class MateriaModel {
+class MateriasModel {
   int idMateria;
   String nombreMateria;
   int idActividad;
@@ -7,7 +7,7 @@ class MateriaModel {
   double tecerCorte;
   double definitiva;
 
-  MateriaModel({
+  MateriasModel({
     this.idMateria,
     this.nombreMateria,
     this.primerCorte,
@@ -17,7 +17,8 @@ class MateriaModel {
     this.definitiva,
   });
 
-  factory MateriaModel.fromJson(Map<String, dynamic> json) => new MateriaModel(
+  factory MateriasModel.fromJson(Map<String, dynamic> json) =>
+      new MateriasModel(
         idMateria: json["idMateria"],
         nombreMateria: json["nombreMateria"],
         primerCorte: json["primerCorte"],
