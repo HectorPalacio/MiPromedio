@@ -67,7 +67,7 @@ class _DetalleCorteState extends State<DetalleCorte> {
             height: _sizeHeight * 0.55,
             child: ListView.builder(
               physics: BouncingScrollPhysics(),
-              itemCount: 0,
+              itemCount: 1,
               itemBuilder: (context, index) {
                 return Column(
                   children: [
