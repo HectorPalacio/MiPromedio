@@ -6,9 +6,8 @@ import 'package:mi_promedio/src/widgets/boton_gordo.dart';
 
 class DetallesMateria extends StatelessWidget {
   final String nombreAsignatura;
-  final double primerCorte;
 
-  const DetallesMateria({this.nombreAsignatura, this.primerCorte});
+  DetallesMateria({this.nombreAsignatura});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +46,9 @@ class DetallesMateria extends StatelessWidget {
             Navigator.push(
                 context,
                 CupertinoPageRoute(
-                  builder: (context) => DetalleCorte(),
+                  builder: (context) => DetalleCorte(
+                    numeroCorte: 'Primer',
+                  ),
                 ));
           },
         ),
@@ -61,7 +62,7 @@ class DetallesMateria extends StatelessWidget {
             Navigator.push(
                 context,
                 CupertinoPageRoute(
-                  builder: (context) => DetalleCorte(),
+                  builder: (context) => DetalleCorte(numeroCorte: 'Segundo'),
                 ));
           },
         ),
@@ -75,7 +76,7 @@ class DetallesMateria extends StatelessWidget {
             Navigator.push(
                 context,
                 CupertinoPageRoute(
-                  builder: (context) => DetalleCorte(),
+                  builder: (context) => DetalleCorte(numeroCorte: 'Tercer'),
                 ));
           },
         ),

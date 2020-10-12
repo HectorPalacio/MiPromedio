@@ -121,7 +121,7 @@ class DBProvider {
   //Registrar actividad
   nuevaActividad(ActividadModel nuevaActividad) async {
     final db = await database;
-    final res = await db.insert('Materias', nuevaActividad.toJson());
+    final res = await db.insert('Actividad', nuevaActividad.toJson());
     return res;
   }
 
@@ -160,9 +160,9 @@ class DBProvider {
     return res;
   }
 
-  // Future<int> deleteAll() async {
-  //   final db = await database;
-  //   final res = await db.rawDelete('DELETE FROM Clientes');
-  //   return res;
-  // }
+  Future<int> deleteAll() async {
+    final db = await database;
+    final res = await db.rawDelete('DELETE FROM Actividad');
+    return res;
+  }
 }

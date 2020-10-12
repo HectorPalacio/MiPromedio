@@ -17,7 +17,7 @@ class ActividadModel {
       new ActividadModel(
         idActividad: json["idActividad"],
         nombreActividad: json["nombreActividad"],
-        notaActividad: json["notaActividad"],
+        notaActividad: json["notaActividad"] / 1,
         porcentaje: json["porcentaje"],
         numeroCorte: json["numeroCorte"],
       );
